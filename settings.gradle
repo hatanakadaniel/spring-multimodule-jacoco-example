@@ -1,1 +1,4 @@
 rootProject.name = 'spring-multimodule-jacoco-example'
+
+include 'example-core'
+include 'example-api'
