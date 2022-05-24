@@ -3,12 +3,11 @@ package com.hatanaka.springmultimodulejacocoexample.domain;
 import lombok.Builder;
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Builder
 @Data
-public class DomainA {
+public class DomainB {
 
     private String param1;
-    private BigDecimal param2;
+    private Long param2;
+    private String param3;
 }
