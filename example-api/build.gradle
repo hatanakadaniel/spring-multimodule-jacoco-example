@@ -2,7 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.6.7'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'jacoco'
+    id 'jacoco-report-aggregation'
+    id 'org.sonarqube' version '3.3'
+//    id 'jvm-test-suite'
+//    id 'test-report-aggregation'
 }
 
 dependencyManagement {
@@ -24,19 +27,19 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    systemProperty("cucumber.junit-platform.naming-strategy", "long")
-    finalizedBy jacocoTestReport // report is always generated after tests run
+//    systemProperty("cucumber.junit-platform.naming-strategy", "long")
+//    finalizedBy jacocoTestReport // report is always generated after tests run
 }
-
-jacocoTestReport {
-    reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-    }
-    dependsOn test // tests are required to run before generating the report
-}
-
-jacoco {
-    toolVersion = "0.8.8"
-}
+//
+//jacocoTestReport {
+//    reports {
+//        xml.required = false
+//        csv.required = false
+//        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+//    }
+//    dependsOn test // tests are required to run before generating the report
+//}
+//
+//jacoco {
+//    toolVersion = "0.8.8"
+//}
